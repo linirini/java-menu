@@ -1,16 +1,16 @@
 package menu.controller;
 
+import static menu.util.Constants.BLANK;
 import static menu.util.Constants.MAXIMUM_NAME_COUNT;
 import static menu.util.Constants.MAXIMUM_NAME_LENGTH;
 import static menu.util.Constants.MINIMUM_NAME_COUNT;
 import static menu.util.Constants.MINIMUM_NAME_LENGTH;
 import static menu.util.Constants.NAME_SEPARATOR;
+import static menu.util.ExceptionEnum.INVALID_FORMAT;
 import static menu.util.ExceptionEnum.INVALID_NAME_COUNT;
 import static menu.util.ExceptionEnum.INVALID_NAME_LENGTH;
 
 import java.util.List;
-import menu.domain.Coach;
-import menu.domain.Menu;
 import menu.view.InputView;
 
 public class InputController {
@@ -51,7 +51,20 @@ public class InputController {
     }
 
     private void validateFormat(String input) {
+        throwIfInputStartWithBlank(input);
+        throwIfEmptyInput(input);
+    }
 
+    private void throwIfInputStartWithBlank(String input) {
+        if (input.isEmpty()) {
+            throw new IllegalArgumentException(INVALID_FORMAT.getMessage());
+        }
+    }
+
+    private void throwIfEmptyInput(String input) {
+        if (input.charAt(0) == BLANK) {
+            throw new IllegalArgumentException(INVALID_FORMAT.getMessage());
+        }
     }
 
 

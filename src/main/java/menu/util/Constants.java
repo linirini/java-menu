@@ -19,6 +19,7 @@ public class Constants {
     public static final int MAXIMUM_NAME_COUNT = 5;
     public static final int MINIMUM_CANNOT_EAT_MENUS_COUNT = 0;
     public static final int MAXIMUM_CANNOT_EAT_MENUS_COUNT = 2;
+    public static final char BLANK = ' ';
 
 
 }
