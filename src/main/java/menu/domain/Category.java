@@ -86,4 +86,9 @@ public enum Category {
         return menus;
     }
 
+    public Category findCategoryByOption(String option) {
+        return Arrays.stream(values()).filter(category -> category.option.equals(option))
+                .findFirst().get();
+    }
+
 }
