@@ -11,8 +11,7 @@ public class Constants {
     public static final int END_NUMBER = 5;
     public static final int MONDAY = 0;
     public static final int FRIDAY = 4;
-    public static final String NAME_SEPARATOR = ", ";
-    public static final String MENU_SEPARATOR = ",";
+    public static final String SEPARATOR = ",";
     public static final int MINIMUM_NAME_LENGTH = 2;
     public static final int MAXIMUM_NAME_LENGTH = 5;
     public static final int MINIMUM_NAME_COUNT = 2;
