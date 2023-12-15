@@ -6,7 +6,8 @@ public enum ExceptionEnum {
     INVALID_MENU_COUNT("못 먹는 메뉴는 0개 이상, 2개 이하만 입력 가능합니다."),
     DUPLICATED_MENU("중복되는 메뉴를 입력하였습니다."),
     INVALID_NAME_COUNT("코치는 2명이상, 5명 이하까지 입력할 수 있습니다."),
-    INVALID_FORMAT("올바르지 않은 형식의 입력값입니다.");
+    INVALID_FORMAT("올바르지 않은 형식의 입력값입니다."),
+    NO_MENU("존재하지 않는 메뉴입니다.");
 
     private static final String ERROR = "[ERROR] ";
     private String message;

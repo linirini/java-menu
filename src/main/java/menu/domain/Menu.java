@@ -1,5 +1,7 @@
 package menu.domain;
 
+import static menu.util.ExceptionEnum.NO_MENU;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -69,7 +71,7 @@ public enum Menu {
     }
 
     public static Menu findMenuByName(String name){
-        return Arrays.stream(values()).filter(menu -> menu.name.equals(name)).findFirst().get();
+        return Arrays.stream(values()).filter(menu -> menu.name.equals(name)).findFirst().orElseThrow(()-> new IllegalArgumentException(NO_MENU.getMessage()));
     }
 
 }
