@@ -2,6 +2,8 @@ package menu.view;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
+import menu.domain.Coach;
+
 public class InputView {
 
     public String inputCoachNames(){
