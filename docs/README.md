@@ -4,7 +4,7 @@
 - [ ] 메뉴 카테고리 무작위 선정 기능 - CategoryService
   - [ ] 요일마다 카테고리 추천 - RandomMachine#createRandomNumber
   - [x] 요일 별로 추천된 카테고리를 가져온다 - CategoryResult#getCategory
-  - [ ] camp.nextstep.edu.missionutils에서 제공하는 Randoms.pickNumberInRange()에서 생성해 준 값을 이용
+  - [x] camp.nextstep.edu.missionutils에서 제공하는 Randoms.pickNumberInRange()에서 생성해 준 값을 이용
     - [ ] 결과가 1이면 일식, 2면 한식, 3이면 중식, 4면 아시안, 5면 양식을 추천 - CategoryEnum
       - [ ] 순서 변경 금지
   - [ ] 추천할 수 없는 메뉴인 카테고리인 경우 : 한 주에 같은 카테고리 최대 2회 선정 가능

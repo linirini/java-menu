@@ -1,5 +1,9 @@
 package menu.domain;
 
+import static menu.util.Constants.END_NUMBER;
+import static menu.util.Constants.START_NUMBER;
+
+import camp.nextstep.edu.missionutils.Randoms;
 import java.lang.reflect.Member;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,5 +17,9 @@ public class RandomMachine {
     }
 
     private RandomMachine() {}
+
+    public int createRandomNumber(){
+        return Randoms.pickNumberInRange(START_NUMBER,END_NUMBER);
+    }
 
 }
