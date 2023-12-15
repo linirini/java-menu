@@ -11,11 +11,11 @@ public class CategoryResult {
         this.categories = categories;
     }
 
-    public Category getCategory(int day){
+    public Category getCategory(int day) {
         return categories.get(day);
     }
 
-    public List<String> getCategoryNames(){
+    public List<String> getCategoryNames() {
         List<String> names = new ArrayList<>();
         categories.forEach(category -> names.add(category.getName()));
         return names;
