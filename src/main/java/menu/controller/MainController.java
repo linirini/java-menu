@@ -42,10 +42,8 @@ public class MainController {
 
     private RecommendResult recommendMenusForCoaches(CategoryResult categoryResult,
             List<Coach> coaches) {
-        HashMap<Coach, List<Menu>> recommendResults = new HashMap<>();
-        for (Coach coach : coaches) {
-            recommendResults.put(coach, menuService.recommendMenus(coach, categoryResult));
-        }
+        HashMap<Coach, List<Menu>> recommendResults = menuService.recommendMenus(coaches,
+                categoryResult);
         return new RecommendResult(recommendResults);
     }
 

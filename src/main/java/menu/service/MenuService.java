@@ -4,6 +4,7 @@ import static menu.util.Constants.FRIDAY;
 import static menu.util.Constants.MONDAY;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import menu.domain.Category;
 import menu.domain.CategoryResult;
@@ -15,13 +16,23 @@ public class MenuService {
 
     private static final RandomMachine machine = RandomMachine.getInstance();
 
-    public List<Menu> recommendMenus(Coach coach, CategoryResult categoryResult){
-        List<Menu> menus = new ArrayList<>();
+    public HashMap<Coach,List<Menu>> recommendMenus(List<Coach> coaches, CategoryResult categoryResult){
+        HashMap<Coach,List<Menu>> recommendResults = initRecommendResults(coaches);
         for(int i=MONDAY;i<=FRIDAY;i++){
             List<String> menuNames = Menu.getMenusByCategory(categoryResult.getCategory(i));
-            menus.add(recommendMenu(coach,menuNames,menus));
+            for (Coach coach : coaches) {
+                List<Menu> menus = recommendResults.get(coach);
+                menus.add(recommendMenu(coach,menuNames,menus));
+                recommendResults.replace(coach,menus);
+            }
         }
-        return menus;
+        return recommendResults;
+    }
+
+    private HashMap<Coach,List<Menu>> initRecommendResults(List<Coach> coaches) {
+        HashMap<Coach,List<Menu>> recommendResults= new HashMap<>();
+        coaches.forEach(coach -> recommendResults.put(coach,new ArrayList<>()));
+        return recommendResults;
     }
 
     private Menu recommendMenu(Coach coach, List<String> menuNames, List<Menu> menus) {
