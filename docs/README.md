@@ -3,12 +3,13 @@
 ## 기능
 - [ ] 메뉴 카테고리 무작위 선정 기능 - CategoryService
   - [ ] 요일마다 카테고리 추천 - RandomGenerator#createRandomNumber
+  - [ ] 요일 별로 추천된 카테고리를 가져온다 - CategoryResult#getCategory
   - [ ] camp.nextstep.edu.missionutils에서 제공하는 Randoms.pickNumberInRange()에서 생성해 준 값을 이용
     - [ ] 결과가 1이면 일식, 2면 한식, 3이면 중식, 4면 아시안, 5면 양식을 추천 - CategoryEnum
       - [ ] 순서 변경 금지
   - [ ] 추천할 수 없는 메뉴인 카테고리인 경우 : 한 주에 같은 카테고리 최대 2회 선정 가능
-    - [ ] 일주일 간 선정된 카테고리 횟수 - CategoryInfo#getCountByCategory
-    - [ ] 다시 랜덤 값 생성
+    - [ ] 일주일 간 선정된 카테고리 횟수 - CategoryResult#getSelectedCount
+    - [ ] 다시 랜덤 값 생성 
 - [ ] 코치 메뉴 추천 기능 - MenuService
   - [ ] 예외
     - [ ] 코치 이름이 2글자 미만, 4글자 초과인 경우 - Coach#validate
@@ -47,8 +48,8 @@
   - [ ] 예외
     - [ ] 형식에 맞지 않는 경우
 - [ ] 서비스 종료
-  - [ ] 메뉴 추천 결과 출력
-    - [ ] "메뉴 추천 결과입니다.\n
+  - [x] 메뉴 추천 결과 출력
+    - [x] "메뉴 추천 결과입니다.\n
       [ 구분 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 ]\n
       [ 카테고리 | 한식 | 한식 | 일식 | 중식 | 아시안 ]\n
       [ 코치명 | 메뉴명1 | 메뉴명2 | 메뉴명3 | 메뉴명4 | 메뉴명5 ]\n\n
