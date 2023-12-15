@@ -11,9 +11,12 @@ import static menu.util.ExceptionEnum.INVALID_MENU_COUNT;
 import static menu.util.ExceptionEnum.INVALID_NAME_LENGTH;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import menu.domain.CategoryResult;
 import menu.domain.Coach;
 import menu.domain.Menu;
+import menu.domain.RecommendResult;
 import menu.service.CategoryService;
 import menu.service.MenuService;
 import menu.view.InputView;
@@ -29,6 +32,8 @@ public class MainController {
     public void run(){
         startRecommendation();
         List<Coach> coaches = getInputs();
+        CategoryResult categoryResult = categoryService.recommendCategories();
+        RecommendResult recommendResult = recommendMenusForCoaches(categoryResult,coaches);
     }
 
     private void startRecommendation() {
@@ -43,6 +48,14 @@ public class MainController {
             coaches.add(new Coach(coachName,menus));
         }
         return coaches;
+    }
+
+    private RecommendResult recommendMenusForCoaches(CategoryResult categoryResult, List<Coach> coaches) {
+        HashMap<Coach,List<Menu>> recommendResults = new HashMap<>();
+        for (Coach coach : coaches) {
+            recommendResults.put(coach,menuService.recommendMenus(coach,categoryResult));
+        }
+        return new RecommendResult(recommendResults);
     }
 
 
