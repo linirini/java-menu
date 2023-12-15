@@ -18,7 +18,7 @@
       - [ ] 이미 추천한 메뉴, 먹지 못하는 메뉴도 포함된 리스트를 전달
   - [ ] 예외
     - [ ] 코치 이름이 2글자 미만, 4글자 초과인 경우 - Coach#validate
-    - [ ] 못 먹는 메뉴가 0개미만 2개 초과인 경우 - Coach#validate
+    - [ ] 못 먹는 메뉴가 0개 미만 2개 초과인 경우 - Coach#validate
   - [ ] 추천하지 못하는 경우 
     - [x] 각 코치에게 한 주에 중복되지 않는 메뉴 추천 - RecommendResult#contains
     - [x] 코치가 못 먹는 메뉴 추천 - Coach#cannotEatMenusContain
