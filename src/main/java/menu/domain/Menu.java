@@ -45,7 +45,7 @@ public enum Menu {
     FRENCH_TOAST("프렌치 토스트"),
     BAGUETTE("바게트"),
     SPAGHETTI("스파게티"),
-    PIZZE("피자"),
+    PIZZA("피자"),
     PANINI("파니니");
 
     private final String name;
