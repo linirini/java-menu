@@ -12,7 +12,7 @@
     - [ ] 다시 랜덤 값 생성 
 - [ ] 코치 메뉴 추천 기능 - MenuService
   - [ ] 메뉴 순서를 섞어서 나오는 첫번째 메뉴 추천 - RandomMachine#shuffleMenus
-  - [ ] camp.nextstep.edu.missionutils에서 제공하는 Randoms.shuffle()을 통해 임의의 순서로 섞은 후, 첫 번째 값을 사용
+  - [x] camp.nextstep.edu.missionutils에서 제공하는 Randoms.shuffle()을 통해 임의의 순서로 섞은 후, 첫 번째 값을 사용
     - [ ] List<String> 형태로 카테고리 포함 메뉴 목록 준비 - MenuEnum#getMenusByCategory
       - [ ] 최초에 제공한 목록을 그대로 전달
       - [ ] 이미 추천한 메뉴, 먹지 못하는 메뉴도 포함된 리스트를 전달
@@ -20,7 +20,7 @@
     - [ ] 코치 이름이 2글자 미만, 4글자 초과인 경우 - Coach#validate
     - [ ] 못 먹는 메뉴가 0개미만 2개 초과인 경우 - Coach#validate
   - [ ] 추천하지 못하는 경우 
-    - [ ] 각 코치에게 한 주에 중복되지 않는 메뉴 추천 - RecommendResult#contains
+    - [x] 각 코치에게 한 주에 중복되지 않는 메뉴 추천 - RecommendResult#contains
     - [x] 코치가 못 먹는 메뉴 추천 - Coach#cannotEatMenusContain
     - [ ] 다시 섞은 후 사용
 - [x] 카테고리와 메뉴 요구사항 - CategoryEnum, MenuEnum
