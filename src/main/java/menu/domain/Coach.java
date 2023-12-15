@@ -5,27 +5,31 @@ import java.util.List;
 public class Coach {
 
     private final String name;
-    private final List<Menu> menus;
+    private final List<Menu> cannotEatMenus;
 
-    public Coach(String name, List<Menu> menus) {
-        validate(name,menus);
+    public Coach(String name, List<Menu> cannotEatMenus) {
+        validate(name,cannotEatMenus);
         this.name = name;
-        this.menus = menus;
+        this.cannotEatMenus = cannotEatMenus;
     }
 
     public String getName() {
         return name;
     }
 
-    private void validate(String name, List<Menu> menus){
+    private void validate(String name, List<Menu> cannotEatMenus){
         throwIfInvalidNameLength(name);
-        throwIfInvalidMenusCount(menus);
+        throwIfInvalidMenusCount(cannotEatMenus);
     }
 
     private void throwIfInvalidNameLength(String name) {
     }
 
     private void throwIfInvalidMenusCount(List<Menu> menus) {
+    }
+
+    public boolean cannotEatMenusContain(Menu menu){
+        return cannotEatMenus.contains(menu);
     }
 
 }
