@@ -17,8 +17,4 @@ public class RecommendResult {
         return Collections.unmodifiableMap(results);
     }
 
-    public boolean contains(Coach coach, Menu menu){
-        return results.get(coach).contains(menu);
-    }
-
 }
