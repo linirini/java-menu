@@ -1,29 +1,29 @@
 # 🚀기능 명세서
 
 ## 기능
-- [ ] 메뉴 카테고리 추천 기능 - CategoryService
+- [x] 메뉴 카테고리 추천 기능 - CategoryService
   - [x] 요일마다 카테고리 추천 - CategoryService#recommendCategory
   - [x] 요일 별로 추천된 카테고리를 가져온다 - CategoryResult#getCategory
   - [x] camp.nextstep.edu.missionutils에서 제공하는 Randoms.pickNumberInRange()에서 생성해 준 값을 이용 - RandomMachine#createRandomNumber
-    - [ ] 결과가 1이면 일식, 2면 한식, 3이면 중식, 4면 아시안, 5면 양식을 추천 - CategoryEnum
-      - [ ] 순서 변경 금지
-  - [ ] 추천할 수 없는 메뉴인 카테고리인 경우 : 한 주에 같은 카테고리 최대 2회 선정 가능
+    - [x] 결과가 1이면 일식, 2면 한식, 3이면 중식, 4면 아시안, 5면 양식을 추천 - CategoryEnum
+      - [x] 순서 변경 금지
+  - [x] 추천할 수 없는 메뉴인 카테고리인 경우 : 한 주에 같은 카테고리 최대 2회 선정 가능
     - [x] 일주일 간 선정된 카테고리 횟수 - CategoryService
-    - [ ] 다시 랜덤 값 생성 
-- [ ] 코치 메뉴 추천 기능 - MenuService
-  - [ ] 메뉴 순서를 섞어서 나오는 첫번째 메뉴 추천 - RandomMachine#shuffleMenus
+    - [x] 다시 랜덤 값 생성 
+- [x] 코치 메뉴 추천 기능 - MenuService
+  - [x] 메뉴 순서를 섞어서 나오는 첫번째 메뉴 추천 - RandomMachine#shuffleMenus
   - [x] camp.nextstep.edu.missionutils에서 제공하는 Randoms.shuffle()을 통해 임의의 순서로 섞은 후, 첫 번째 값을 사용
-    - [ ] List<String> 형태로 카테고리 포함 메뉴 목록 준비 - MenuEnum#getMenusByCategory
-      - [ ] 최초에 제공한 목록을 그대로 전달
-      - [ ] 이미 추천한 메뉴, 먹지 못하는 메뉴도 포함된 리스트를 전달
-  - [ ] 예외
+    - [x] List<String> 형태로 카테고리 포함 메뉴 목록 준비 - MenuEnum#getMenusByCategory
+      - [x] 최초에 제공한 목록을 그대로 전달
+      - [x] 이미 추천한 메뉴, 먹지 못하는 메뉴도 포함된 리스트를 전달
+  - [x] 예외
     - [x] 코치 이름이 2글자 미만, 4글자 초과인 경우 - Coach#validate
     - [x] 못 먹는 메뉴가 0개 미만 2개 초과인 경우 - Coach#validate
     - [x] 같은 메뉴를 중복해서 입력한 경우 - Coach#validate
-  - [ ] 추천하지 못하는 경우 
+  - [x] 추천하지 못하는 경우 
     - [x] 각 코치에게 한 주에 중복되지 않는 메뉴 추천 - RecommendResult#contains
     - [x] 코치가 못 먹는 메뉴 추천 - Coach#cannotEatMenusContain
-    - [ ] 다시 섞은 후 사용
+    - [x] 다시 섞은 후 사용
 - [x] 카테고리와 메뉴 요구사항 - CategoryEnum, MenuEnum
   - [x] 카테고리에 속한 메뉴들의 이름을 찾는다 - MenuEnum#getMenusByCategory
 ```
