@@ -4,7 +4,6 @@ import static menu.util.Constants.BLANK;
 import static menu.util.Constants.MAXIMUM_CANNOT_EAT_MENUS_COUNT;
 import static menu.util.Constants.MAXIMUM_NAME_COUNT;
 import static menu.util.Constants.MAXIMUM_NAME_LENGTH;
-import static menu.util.Constants.MINIMUM_CANNOT_EAT_MENUS_COUNT;
 import static menu.util.Constants.MINIMUM_NAME_COUNT;
 import static menu.util.Constants.MINIMUM_NAME_LENGTH;
 import static menu.util.Constants.SEPARATOR;
@@ -21,7 +20,7 @@ import menu.view.InputView;
 
 public class InputController {
 
-    private static InputView inputView = new InputView();
+    private static final InputView inputView = new InputView();
 
     public List<String> inputCoachNamesUntilNoError() {
         while (true) {
@@ -99,8 +98,7 @@ public class InputController {
     }
 
     private void throwIfInvalidMenusCount(List<String> menus) {
-        if (menus.size() < MINIMUM_CANNOT_EAT_MENUS_COUNT
-                || menus.size() > MAXIMUM_CANNOT_EAT_MENUS_COUNT) {
+        if (menus.size() > MAXIMUM_CANNOT_EAT_MENUS_COUNT) {
             throw new IllegalArgumentException(INVALID_MENU_COUNT.getMessage());
         }
     }
