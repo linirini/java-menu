@@ -1,5 +1,7 @@
 package menu.view;
 
+import menu.domain.RecommendResult;
+
 public class OutputView {
     
     public void printStartMessage(){
