@@ -82,9 +82,8 @@ public enum Category {
         this.menus = menus;
     }
 
-    public List<Menu> getMenusByOption(String option) {
-        return Arrays.stream(values()).filter(category -> category.option.equals(option))
-                .findFirst().get().menus;
+    public List<Menu> getMenus() {
+        return menus;
     }
 
 }
