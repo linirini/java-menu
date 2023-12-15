@@ -15,4 +15,10 @@ public class CategoryResult {
         return categories.get(day);
     }
 
+    public List<String> getCategoryNames(){
+        List<String> names = new ArrayList<>();
+        categories.forEach(category -> names.add(category.getName()));
+        return names;
+    }
+
 }
