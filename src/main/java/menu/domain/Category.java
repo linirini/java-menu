@@ -32,7 +32,6 @@ import static menu.domain.Menu.PADTHAI;
 import static menu.domain.Menu.PANINI;
 import static menu.domain.Menu.PINEAPPLE_FRIED_RICE;
 import static menu.domain.Menu.PIZZA;
-import static menu.domain.Menu.PIZZE;
 import static menu.domain.Menu.PORK_FRIED;
 import static menu.domain.Menu.RAMEN;
 import static menu.domain.Menu.RICE_NOODLES;
@@ -52,15 +51,26 @@ import static menu.util.Constants.JAPANESE_NUMBER;
 import static menu.util.Constants.KOREAN_NUMBER;
 import static menu.util.Constants.WESTERN_NUMBER;
 
+import java.util.Arrays;
 import java.util.List;
 
 public enum Category {
 
-    JAPANESE("일식",JAPANESE_NUMBER,List.of(GYUDON, UDON,MISHOSHIRU, SUSHI, KATSUDONG, ONIGIRI, HIGHRICE, RAMEN, OKONOMIYAKI)),
-    KOREAN("한식",KOREAN_NUMBER,List.of( GIMBAP, KIMCHI_STEW, SSAMBAP, SOYBEAN_STEW, BIBIMBAP, KALGUKSU, BULGOGI, TTEOKBOKKI, PORK_FRIED)),
-    CHINESE("중식",CHINESE_NUMBER,List.of(KKANPUNGGI, NOODLES_FRIED, DONGPAYUK, BLACK_NOODLES, JJAMPPONG, MAPA_TOFU, SWEET_PORK, TOMATO_EGGS_FRIED, CHILI_JAPCHAE)),
-    ASIAN("아시안",ASIAN_NUMBER,List.of(PADTHAI, KAOPAD, NASHIGOREONG, PINEAPPLE_FRIED_RICE,RICE_NOODLES, TOMYAMKUNG,BANH_MI, SPRING_ROLLS, BUNCHA)),
-    WESTERN("양식",WESTERN_NUMBER,List.of(LASAGNA, GRATIN, GNOCCHI, KISHU, FRENCH_TOAST, BAGUETTE, SPAGHETTI, PIZZA, PANINI));
+    JAPANESE("일식", JAPANESE_NUMBER,
+            List.of(GYUDON, UDON, MISHOSHIRU, SUSHI, KATSUDONG, ONIGIRI, HIGHRICE, RAMEN,
+                    OKONOMIYAKI)),
+    KOREAN("한식", KOREAN_NUMBER,
+            List.of(GIMBAP, KIMCHI_STEW, SSAMBAP, SOYBEAN_STEW, BIBIMBAP, KALGUKSU, BULGOGI,
+                    TTEOKBOKKI, PORK_FRIED)),
+    CHINESE("중식", CHINESE_NUMBER,
+            List.of(KKANPUNGGI, NOODLES_FRIED, DONGPAYUK, BLACK_NOODLES, JJAMPPONG, MAPA_TOFU,
+                    SWEET_PORK, TOMATO_EGGS_FRIED, CHILI_JAPCHAE)),
+    ASIAN("아시안", ASIAN_NUMBER,
+            List.of(PADTHAI, KAOPAD, NASHIGOREONG, PINEAPPLE_FRIED_RICE, RICE_NOODLES, TOMYAMKUNG,
+                    BANH_MI, SPRING_ROLLS, BUNCHA)),
+    WESTERN("양식", WESTERN_NUMBER,
+            List.of(LASAGNA, GRATIN, GNOCCHI, KISHU, FRENCH_TOAST, BAGUETTE, SPAGHETTI, PIZZA,
+                    PANINI));
 
     private final String name;
     private final String option;
@@ -71,4 +81,10 @@ public enum Category {
         this.option = option;
         this.menus = menus;
     }
+
+    public List<Menu> getMenusByOption(String option) {
+        return Arrays.stream(values()).filter(category -> category.option.equals(option))
+                .findFirst().get().menus;
+    }
+
 }

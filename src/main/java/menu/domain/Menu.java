@@ -1,5 +1,7 @@
 package menu.domain;
 
+import java.util.List;
+
 public enum Menu {
 
     GYUDON("규동"),
@@ -56,6 +58,10 @@ public enum Menu {
 
     public String getName() {
         return name;
+    }
+
+    public List<String> getMenusByCategoryOption(){
+        return Category.get
     }
 
 }
