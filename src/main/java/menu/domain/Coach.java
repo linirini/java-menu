@@ -1,5 +1,6 @@
 package menu.domain;
 
+import static menu.util.ExceptionEnum.INVALID_MENU_COUNT;
 import static menu.util.ExceptionEnum.INVALID_NAME_LENGTH;
 
 import java.util.List;
@@ -36,6 +37,9 @@ public class Coach {
     }
 
     private void throwIfInvalidMenusCount(List<Menu> menus) {
+        if(menus.size()<MINIMUM_CANNOT_EAT_MENUS_COUNT||menus.size()>MAXIMUM_CANNOT_EAT_MENUS_COUNT){
+            throw new IllegalArgumentException(INVALID_MENU_COUNT.getMessage());
+        }
     }
 
     public boolean cannotEatMenusContain(Menu menu){
