@@ -1,5 +1,6 @@
 package menu.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public enum Menu {
@@ -60,8 +61,10 @@ public enum Menu {
         return name;
     }
 
-    public List<String> getMenusByCategoryOption(){
-        return Category.get
+    public List<String> getMenusByCategory(Category category) {
+        List<String> menuNames = new ArrayList<>();
+        category.getMenus().stream().forEach(menu -> menuNames.add(menu.name));
+        return menuNames;
     }
 
 }
