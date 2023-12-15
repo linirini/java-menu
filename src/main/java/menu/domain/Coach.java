@@ -1,5 +1,6 @@
 package menu.domain;
 
+import static menu.util.ExceptionEnum.DUPLICATED_MENU;
 import static menu.util.ExceptionEnum.INVALID_MENU_COUNT;
 import static menu.util.ExceptionEnum.INVALID_NAME_LENGTH;
 
@@ -28,6 +29,7 @@ public class Coach {
     private void validate(String name, List<Menu> cannotEatMenus){
         throwIfInvalidNameLength(name);
         throwIfInvalidMenusCount(cannotEatMenus);
+        throwIfDuplicatedMenus(cannotEatMenus);
     }
 
     private void throwIfInvalidNameLength(String name) {
@@ -39,6 +41,12 @@ public class Coach {
     private void throwIfInvalidMenusCount(List<Menu> menus) {
         if(menus.size()<MINIMUM_CANNOT_EAT_MENUS_COUNT||menus.size()>MAXIMUM_CANNOT_EAT_MENUS_COUNT){
             throw new IllegalArgumentException(INVALID_MENU_COUNT.getMessage());
+        }
+    }
+
+    private void throwIfDuplicatedMenus(List<Menu> cannotEatMenus) {
+        if(cannotEatMenus.size()!=cannotEatMenus.stream().distinct().count()){
+            throw new IllegalArgumentException(DUPLICATED_MENU.getMessage());
         }
     }
 

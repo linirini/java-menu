@@ -73,10 +73,10 @@ public enum Category {
                     PANINI));
 
     private final String name;
-    private final String option;
+    private final int option;
     private final List<Menu> menus;
 
-    Category(String name, String option, List<Menu> menus) {
+    Category(String name, int option, List<Menu> menus) {
         this.name = name;
         this.option = option;
         this.menus = menus;
@@ -90,8 +90,8 @@ public enum Category {
         return name;
     }
 
-    public Category findCategoryByOption(String option) {
-        return Arrays.stream(values()).filter(category -> category.option.equals(option))
+    public static Category findCategoryByOption(int option) {
+        return Arrays.stream(values()).filter(category -> category.option == option)
                 .findFirst().get();
     }
 
